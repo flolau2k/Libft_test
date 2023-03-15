@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 11:36:37 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/15 10:08:32 by flauer           ###   ########.fr       */
+/*   Created: 2023/03/15 08:28:17 by flauer            #+#    #+#             */
+/*   Updated: 2023/03/15 09:17:14 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+size_t	ft_strlen(const char *s)
 {
-	char			*ret;
-	unsigned int	i;
+	size_t	ret;
 
-	i = 0;
-	ret = malloc((len + 1) * sizeof(char));
-	s += start;
-	while (i < len && s[i])
-	{
-		ret[i] = s[i];
-		i++;
-	}
+	ret = 0;
+	while (s[ret])
+		ret++;
 	return (ret);
 }

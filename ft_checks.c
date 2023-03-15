@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:32:57 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/14 15:47:07 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/15 10:00:06 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_isascii(int c)
 
 int	ft_isprint(int c)
 {
-	if (ft_isascii(c) && c <= 31)
+	if (ft_isascii(c) && c >= 32 && c != 127)
 		return (1);
 	else
 		return (0);

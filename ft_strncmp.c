@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 11:36:37 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/15 10:08:32 by flauer           ###   ########.fr       */
+/*   Created: 2023/03/15 09:27:38 by flauer            #+#    #+#             */
+/*   Updated: 2023/03/15 10:39:21 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char			*ret;
 	unsigned int	i;
 
 	i = 0;
-	ret = malloc((len + 1) * sizeof(char));
-	s += start;
-	while (i < len && s[i])
+	while (i < (n - 1) && s1[i] == s2[i])
 	{
-		ret[i] = s[i];
+		if (!s1[i])
+			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (ret);
+	return (s1[i] - s2[i]);
 }
