@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:47 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/15 09:44:20 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/15 12:48:26 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int		ft_isdigit(int c); //done
 int		ft_isalnum(int c); //done
 int		ft_isascii(int c); //done
 int		ft_isprint(int c); //done
-size_t	ft_strlen(const char *s);
+size_t	ft_strlen(const char *s); //done
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n); //done
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst);
@@ -69,5 +69,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+
+unsigned char	ft_cast(int c);
 
 #endif

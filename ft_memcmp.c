@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 11:36:37 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/15 11:00:39 by flauer           ###   ########.fr       */
+/*   Created: 2023/03/15 12:40:02 by flauer            #+#    #+#             */
+/*   Updated: 2023/03/15 12:52:20 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char			*ret;
-	unsigned int	i;
-
-	i = 0;
-	ret = malloc((len + 1) * sizeof(char));
-	s += start;
-	while (i < len && s[i])
-	{
-		ret[i] = s[i];
-		i++;
-	}
-	ret[i] = '\0';
-	return (ret);
+	
 }
