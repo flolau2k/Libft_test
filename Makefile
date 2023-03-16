@@ -7,5 +7,5 @@ clean:
 re:	clean all
 
 test:
-	(cd libft && make re)
+	(cd libft && make)
 	cc -g -Wall -Wextra -Werror main.c -Llibft/ -lft

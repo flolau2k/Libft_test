@@ -6,7 +6,7 @@
 #    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/03/16 11:45:39 by flauer           ###   ########.fr        #
+#    Updated: 2023/03/16 12:00:55 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): clean
 	cc -c -Wall -Wextra -Werror $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
