@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 14:00:05 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/16 15:38:19 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void	ft_putstrn_fd(char *s, int fd, size_t len)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < len)
@@ -32,7 +32,7 @@ void	ft_putstrn_fd(char *s, int fd, size_t len)
 
 void	put_bytes(char *buf, size_t len)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < len)
@@ -108,6 +108,21 @@ int	main(void)
 	ft_memset(buf, '&', 10);
 	ft_memcpy(buf2, buf, 10);
 	TEST_FUNC(ft_memcmp(buf, buf2, 10) == 0);
+	free(buf);
+	free(buf2);
+
+	ft_putstr_fd("\nft_memmove\n", 1);
+	buf = malloc(32);
+	ft_memset(buf, ' ', 32);
+	buf[31] = 0;
+	char *s2 = buf + 12;
+	char *s1 = buf;
+	ft_strlcpy(s2, "This string has 19b", 32);
+	ft_putendl_fd(s1, 1);
+	ft_memmove(s1, s2, 20);
+	ft_putendl_fd(s1, 1);
+	ft_memmove(s2, s1, 20);
+	ft_putendl_fd(s1, 1);
 
 	ft_putstr_fd("\nft_memcmp\n", 1);
 	TEST_FUNC(ft_memcmp("hallo123", "hallo123", 8) == 0);
