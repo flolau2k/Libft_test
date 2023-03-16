@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 11:20:52 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/16 11:33:47 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,9 @@ int	main(void)
 	ft_putstr_fd("\nft_memset\n", 1);
 	char *buf = malloc(10*sizeof(char));
 	buf = ft_memset(buf, '1', 10);
-	buf[9] = 0;
+	//buf[9] = 0;
 	//put_bytes(buf, 10);
-	TEST_FUNC(memcmp(buf, "111111111\0", 10) == 0);
+	TEST_FUNC(memcmp(buf, "1111111111", 10) == 0);
 
 	ft_putstr_fd("\nft_memcmp\n", 1);
 	TEST_FUNC(ft_memcmp("hallo123", "hallo123", 8) == 0);
