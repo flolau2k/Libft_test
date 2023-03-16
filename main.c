@@ -6,11 +6,11 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/15 12:51:07 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/16 08:53:30 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 
 #define TEST_FUNC(CONDITION) CONDITION ? ft_putstr_fd("passed\n", 1) : ft_putstr_fd("---failed---\n", 1);
 
