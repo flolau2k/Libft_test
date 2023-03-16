@@ -1,10 +1,9 @@
-all: test
+all: re
 
 clean:
-	/bin/rm -f *.o
-	/bin/rm -f *.out
+	(cd libft && make fclean)
 
-re:	clean all
+re:	clean test
 
 test:
 	(cd libft && make)

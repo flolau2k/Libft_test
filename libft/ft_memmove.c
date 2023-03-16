@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 10:34:42 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 10:35:43 by flauer           ###   ########.fr       */
+/*   Created: 2023/03/16 14:03:37 by flauer            #+#    #+#             */
+/*   Updated: 2023/03/16 14:04:05 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	
 }

@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 11:59:57 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/16 14:00:05 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	main(void)
 	ft_putstr_fd("\nft_strlcat\n", 1);
 
 	ft_putstr_fd("\nft_memset\n", 1);
-	char *buf = malloc(10*sizeof(char));
+	char *buf = malloc(10);
 	ft_memset(buf, '1', 10);
 	//put_bytes(buf, 10);
 	TEST_FUNC(ft_memcmp(buf, "1111111111", 10) == 0);
@@ -99,6 +99,15 @@ int	main(void)
 	ft_putstr_fd("\nft_bzero\n", 1);
 	ft_bzero(buf, 10);
 	TEST_FUNC(ft_memcmp(buf, "\0\0\0\0\0\0\0\0\0\0", 10) == 0);
+
+	ft_putstr_fd("\nft_memcpy\n", 1);
+	char *buf2 = malloc(10);
+	ft_memset(buf, '1', 10);
+	ft_memcpy(buf2, buf, 10);
+	TEST_FUNC(ft_memcmp(buf, buf2, 10) == 0);
+	ft_memset(buf, '&', 10);
+	ft_memcpy(buf2, buf, 10);
+	TEST_FUNC(ft_memcmp(buf, buf2, 10) == 0);
 
 	ft_putstr_fd("\nft_memcmp\n", 1);
 	TEST_FUNC(ft_memcmp("hallo123", "hallo123", 8) == 0);

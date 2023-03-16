@@ -6,23 +6,23 @@
 #    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/03/16 12:00:55 by flauer           ###   ########.fr        #
+#    Updated: 2023/03/16 13:57:44 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC =	ft_checks.c ft_memcmp.c ft_memset.c ft_putchar_fd.c ft_putstr_fd.c \
-		ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_substr.c ft_bzero.c
+SRC = ft_*.c
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): clean
+$(NAME):
 	cc -c -Wall -Wextra -Werror $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
+	make clean
 
 clean:
 	/bin/rm -f $(OBJ)
