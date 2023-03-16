@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 16:16:43 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/16 17:35:06 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,4 +136,23 @@ int	main(void)
 
 	ft_putstr_fd("\nft_strrchr\n", 1);
 	TEST_FUNC(ft_strrchr(buf, 's') == buf + 26);
+
+	ft_putstr_fd("\nft_memchr\n", 1);
+	TEST_FUNC(ft_memchr(buf, 's', 32) == buf + 3);
+
+	ft_putstr_fd("\nft_strnstr\n", 1);
+	char *hay = "Das ist das Haus vom Nikolaus";
+	char *needle = "Haus";
+	TEST_FUNC(ft_strnstr(hay, needle, 30) == hay + 12);
+	char *needle2 = "";
+	TEST_FUNC(ft_strnstr(hay, needle2, 30) == hay);
+	char *needle3 = "asdf";
+	TEST_FUNC(ft_strnstr(hay, needle3, 30) == NULL);
+
+	ft_putstr_fd("\nft_atoi\n", 1);
+	TEST_FUNC(ft_atoi("1234") == 1234);
+	TEST_FUNC(ft_atoi("  -----32") == -32);
+	TEST_FUNC(ft_atoi("  ++--4") == 4);
+
+	
 }

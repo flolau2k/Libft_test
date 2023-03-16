@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:47 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 16:17:02 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/16 17:36:16 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ int		ft_toupper(int c); //done
 int		ft_tolower(int c); //done
 char	*ft_strchr(const char *s, int c); //done
 char	*ft_strrchr(const char *s, int c); //done
-void	*ft_memchr(const void *s, int c, size_t n);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int		ft_atoi(const char *str);
+void	*ft_memchr(const void *s, int c, size_t n); //done
+int		ft_memcmp(const void *s1, const void *s2, size_t n); //done
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len); //done
+int		ft_atoi(const char *str); //done
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
 // Part 2: Additional functions
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len); //done
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
