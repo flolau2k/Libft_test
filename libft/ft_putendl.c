@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 12:40:02 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 09:23:51 by flauer           ###   ########.fr       */
+/*   Created: 2023/03/16 10:34:42 by flauer            #+#    #+#             */
+/*   Updated: 2023/03/16 10:35:43 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	unsigned int		i;
-	const unsigned char	*b1;
-	const unsigned char	*b2;
-
-	i = 0;
-	b1 = s1;
-	b2 = s2;
-	while (i < (n - 1))
-	{
-		if (b1[i] != b2[i])
-			break ;
-		i++;
-	}
-	return (b1[i] - b2[i]);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

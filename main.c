@@ -6,13 +6,43 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 08:53:30 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/16 11:20:52 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
+#include <string.h>
+#include <stdio.h>
 
-#define TEST_FUNC(CONDITION) CONDITION ? ft_putstr_fd("passed\n", 1) : ft_putstr_fd("---failed---\n", 1);
+#define TEST_FUNC(CONDITION)	if(CONDITION) \
+									ft_putstr_fd("passed\n", 1); \
+								else \
+									ft_putstr_fd("\033[1;31mfailed\033[0m\n", 1);
+
+void	ft_putstrn_fd(char *s, int fd, size_t len)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+}
+
+void	put_bytes(char *buf, size_t len)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		printf("%i ", buf[i]);
+		i++;
+	}
+	printf("\n");
+}
 
 int	main(void)
 {
@@ -62,4 +92,16 @@ int	main(void)
 	ft_putstr_fd("\nft_strlcat\n", 1);
 
 	ft_putstr_fd("\nft_memset\n", 1);
+	char *buf = malloc(10*sizeof(char));
+	buf = ft_memset(buf, '1', 10);
+	buf[9] = 0;
+	//put_bytes(buf, 10);
+	TEST_FUNC(memcmp(buf, "111111111\0", 10) == 0);
+
+	ft_putstr_fd("\nft_memcmp\n", 1);
+	TEST_FUNC(ft_memcmp("hallo123", "hallo123", 8) == 0);
+	TEST_FUNC(ft_memcmp("hallo123", "hallo123", 30) == 0);
+	TEST_FUNC(ft_memcmp("hallo123", "hallo", 5) == 0);
+	TEST_FUNC(ft_memcmp("hallo123", "hallo234", 8) < 0);
+	TEST_FUNC(ft_memcmp("1234", "12345", 5) < 0);
 }
