@@ -6,12 +6,13 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/17 10:32:00 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/17 12:15:51 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <stdio.h>
+#include <ctype.h>
 
 #define TEST_FUNC(CONDITION)	if(CONDITION) \
 									ft_putstr_fd("passed\n", 1); \
@@ -158,10 +159,25 @@ int	main(void)
 	void	*test2 = ft_calloc(10, 1);
 	void	*check = calloc(10, 1);
 	TEST_FUNC(ft_memcmp(test2, check, 10) == 0);
+	free(check);
 	
 	ft_putendl_fd("\nft_strdup", 1);
 	char *dup;
 
 	dup = ft_strdup(hay);
 	TEST_FUNC(ft_strncmp(hay, dup, 30) == 0);
+	free(dup);
+	free(test2);
+
+	ft_putendl_fd("\nft_strjoin", 1);
+	test2 = ft_strjoin(hay, needle);
+	TEST_FUNC(ft_strncmp(test2, "Das ist das Haus vom NikolausHaus", 34) == 0);
+	
+	ft_putendl_fd("\nft_strtrim", 1);
+	char	trimtest[] = "123Hallo3212";
+	ft_putendl_fd(trimtest, 1);
+	check = ft_strtrim(trimtest, "123");
+	TEST_FUNC(ft_strncmp("Hallo", check, 12) == 0);
+	ft_putendl_fd(check, 1);
+
 }

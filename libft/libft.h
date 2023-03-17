@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:47 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/17 10:51:44 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/17 12:16:10 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strdup(const char *s1); //done
 // Part 2: Additional functions
 char	*ft_substr(char const *s, unsigned int start, size_t len); //done
 char	*ft_strjoin(char const *s1, char const *s2); //done
-char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strtrim(char const *s1, char const *set); //done
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
