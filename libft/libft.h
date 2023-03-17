@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:47 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 17:36:16 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/17 09:46:51 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	*ft_memchr(const void *s, int c, size_t n); //done
 int		ft_memcmp(const void *s1, const void *s2, size_t n); //done
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len); //done
 int		ft_atoi(const char *str); //done
-void	*ft_calloc(size_t count, size_t size);
-char	*ft_strdup(const char *s1);
+void	*ft_calloc(size_t count, size_t size); //done
+char	*ft_strdup(const char *s1); //done
 
 // Part 2: Additional functions
 char	*ft_substr(char const *s, unsigned int start, size_t len); //done
