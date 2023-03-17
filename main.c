@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 17:35:06 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/17 10:32:00 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,5 +154,14 @@ int	main(void)
 	TEST_FUNC(ft_atoi("  -----32") == -32);
 	TEST_FUNC(ft_atoi("  ++--4") == 4);
 
+	ft_putendl_fd("\nft_calloc", 1);
+	void	*test2 = ft_calloc(10, 1);
+	void	*check = calloc(10, 1);
+	TEST_FUNC(ft_memcmp(test2, check, 10) == 0);
 	
+	ft_putendl_fd("\nft_strdup", 1);
+	char *dup;
+
+	dup = ft_strdup(hay);
+	TEST_FUNC(ft_strncmp(hay, dup, 30) == 0);
 }
