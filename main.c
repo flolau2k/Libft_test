@@ -6,13 +6,13 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/17 12:15:51 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/17 14:33:54 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 
 #define TEST_FUNC(CONDITION)	if(CONDITION) \
 									ft_putstr_fd("passed\n", 1); \
@@ -90,6 +90,12 @@ int	main(void)
 	ft_putstr_fd("\nft_strlcpy\n", 1);
 	
 	ft_putstr_fd("\nft_strlcat\n", 1);
+	char	a1[50] = "This";
+	char	a2[] = "that";
+	char	a3[50] = "This";
+	char	a4[] = "that";
+	printf("return: %zu, string is: %s\n", strlcat(a1, a2, 0), a1);
+	printf("return: %zu, string is: %s\n", ft_strlcat(a3, a4, 0), a3);
 
 	ft_putstr_fd("\nft_memcmp\n", 1);
 	TEST_FUNC(ft_memcmp("hallo123", "hallo123", 8) == 0);
@@ -179,5 +185,8 @@ int	main(void)
 	check = ft_strtrim(trimtest, "123");
 	TEST_FUNC(ft_strncmp("Hallo", check, 12) == 0);
 	ft_putendl_fd(check, 1);
+
+	ft_putendl_fd("\nft_split", 1);
+
 
 }
