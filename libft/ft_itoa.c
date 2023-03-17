@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 14:34:29 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/17 14:41:12 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/17 15:10:13 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ char	*ft_itoa(int n)
 	
 	i = 0;
 	ret = ft_calloc(12, sizeof(char));
-	while (i < )
+	if (ret)
+	{
+		while (n / (10 * i) > 0)
+		{
+			
+		}
+	}
+	return (ret);
 }
 
