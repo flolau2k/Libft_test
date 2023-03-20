@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/17 14:33:54 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 11:25:00 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,7 +186,14 @@ int	main(void)
 	TEST_FUNC(ft_strncmp("Hallo", check, 12) == 0);
 	ft_putendl_fd(check, 1);
 
-	ft_putendl_fd("\nft_split", 1);
-
+	ft_putendl_fd("\nft_itoa", 1);
+	// printf("%s\n", ft_itoa(2147483647));
+	TEST_FUNC(ft_strncmp(ft_itoa(2147483647), "2147483647", 12) == 0);
+	// printf("%s\n", ft_itoa(-2147483648));
+	TEST_FUNC(ft_strncmp(ft_itoa(-2147483648), "-2147483648", 12) == 0);
+	// printf("%s\n", ft_itoa(0));
+	TEST_FUNC(ft_strncmp(ft_itoa(0), "0", 12) == 0);
+	// printf("%s\n", ft_itoa(-0));
+	TEST_FUNC(ft_strncmp(ft_itoa(-0), "0", 12) == 0);
 
 }
