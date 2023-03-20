@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 14:26:10 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 18:10:52 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,15 @@ void	put_bytes(char *buf, size_t len)
 
 char	test_toupper(unsigned int i, char c)
 {
-	printf("i = %u\n", i);
+	if (!i)
+		printf("ERROR! i not provided!");
 	return (ft_toupper(c));
 }
 
 void	test2_toupper(unsigned int i, char *c)
 {
-	printf("i = %u\n", i);
+	if (!i)
+		printf("ERROR! i not provided!");
 	*c = ft_toupper(*c);
 }
 
@@ -93,6 +95,21 @@ int	main(void)
 	TEST_FUNC(ft_strncmp(ft_substr("hallo12345", 0, 10), "hallo12345", 10) == 0);
 	TEST_FUNC(ft_strncmp(ft_substr("hallo12345", 1, 9), "allo12345", 9) == 0);
 	TEST_FUNC(ft_strncmp(ft_substr("hallo12345", 0, 5), "hallo", 5) == 0);
+	//TEST_FUNC(strncmp(ft_substr("01234", 10, 5), "", 1) == 0);
+	char *str = "01234";
+	size_t size = 10;
+	char *ret = ft_substr(str, 10, size);
+
+	if (!strncmp(ret, "", 1))
+	{
+			free(ret);
+			ft_putstr_fd("passed\n", 1);
+	}
+	else
+	{
+		free(ret);
+		ft_putstr_fd("failed\n", 1);
+	}
 
 	ft_putstr_fd("\nft_strlen\n", 1);
 	TEST_FUNC(ft_strlen("1234567890") == 10);
@@ -167,11 +184,13 @@ int	main(void)
 	TEST_FUNC(ft_strnstr(hay, needle2, 30) == hay);
 	char *needle3 = "asdf";
 	TEST_FUNC(ft_strnstr(hay, needle3, 30) == NULL);
+	TEST_FUNC(ft_strnstr("lorem ipsum dolor sit amet", "dolor", 0) == NULL);
 
 	ft_putstr_fd("\nft_atoi\n", 1);
-	TEST_FUNC(ft_atoi("1234") == 1234);
-	TEST_FUNC(ft_atoi("  -----32") == -32);
-	TEST_FUNC(ft_atoi("  ++--4") == 4);
+	TEST_FUNC(ft_atoi(" 1234") == 1234);
+	TEST_FUNC(ft_atoi("  -----32") == 0);
+	TEST_FUNC(ft_atoi("  ++--4") == 0);
+	TEST_FUNC(ft_atoi(" \t\n\r\v\f  469 \n") == 469);
 
 	ft_putendl_fd("\nft_calloc", 1);
 	void	*test2 = ft_calloc(10, 1);
@@ -210,15 +229,35 @@ int	main(void)
 
 	ft_putendl_fd("\nft_split", 1);
 	char	to_split[] = "Apfel,Banane,Kiwi,Obstsalat,,\n";
+	char	*scheck[6];
+	scheck[0] = "Apfel";
+	scheck[1] = "Banane";
+	scheck[2] = "Kiwi";
+	scheck[3] = "Obstsalat";
+	scheck[4] = "";
+	scheck[5] = "\n";
 	char	**split = ft_split(to_split, ',');
 	size_t i = 0;
-	while (i < 5)
+	while (i < 6)
 	{
-		ft_putendl_fd(split[i], 1);
+		//ft_putendl_fd(split[i], 1);
+		TEST_FUNC(ft_strncmp(split[i], scheck[i], 10) == 0);
 		i++;
 	}
 
+	char	**split2 = ft_split(" ", ',');
+	i = 0;
+	while (i < 1)
+	{
+		//ft_putendl_fd(split[i], 1);
+		TEST_FUNC(ft_strncmp(split2[i], " ", 10) == 0);
+		i++;
+	}
+
+	ft_putendl_fd("\nft_strmapi", 1);
 	ft_putendl_fd(ft_strmapi("ApfelBaum", &test_toupper), 1);
+
+	ft_putendl_fd("\nft_striteri", 1);
 	char	iteritest[] = "SalatGurke";
 	ft_striteri(iteritest, &test2_toupper);
 	ft_putendl_fd(iteritest, 1);

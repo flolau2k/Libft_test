@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:08:21 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 14:17:27 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 16:16:24 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*ret;
-	size_t		i;
+	size_t	i;
 
 	if (s == NULL || f == NULL)
-		return NULL;
+		return (NULL);
 	ret = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (ret)
 	{

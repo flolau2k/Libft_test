@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:06:38 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/16 16:09:12 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 16:16:52 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	len;
 
-	len = ft_strlen(s);
+	len = ft_strlen(s) + 1;
 	while (--len >= 0)
 	{
 		if (s[len] == (char) c)
-			return ((char*)(s + len));
+			return ((char *)(s + len));
 	}
 	return (NULL);
 }

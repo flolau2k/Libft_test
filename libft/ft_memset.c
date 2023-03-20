@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:28:31 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/17 10:12:49 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 15:48:47 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	i = 0;
 	dst = b;
-	while (i <= len)
+	while (i < len)
 	{
 		dst[i] = c;
 		i++;
