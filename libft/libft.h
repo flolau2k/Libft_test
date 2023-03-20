@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:47 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 11:26:39 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 14:06:01 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ char	*ft_strdup(const char *s1); //done
 char	*ft_substr(char const *s, unsigned int start, size_t len); //done
 char	*ft_strjoin(char const *s1, char const *s2); //done
 char	*ft_strtrim(char const *s1, char const *set); //done
-char	**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c); //done
 char	*ft_itoa(int n); // done
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)); //done
+void	ft_striteri(char *s, void (*f)(unsigned int, char*)); //done
+void	ft_putchar_fd(char c, int fd); //done
+void	ft_putstr_fd(char *s, int fd); //done
+void	ft_putendl_fd(char *s, int fd); //done
+void	ft_putnbr_fd(int n, int fd); //done
 
 // Part 3: bonus
 typedef struct s_list

@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 12:03:29 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 14:04:33 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,18 @@ void	put_bytes(char *buf, size_t len)
 		i++;
 	}
 	printf("\n");
+}
+
+char	test_toupper(unsigned int i, char c)
+{
+	printf("i = %u\n", i);
+	return (ft_toupper(c));
+}
+
+void	test2_toupper(unsigned int i, char *c)
+{
+	printf("i = %u\n", i);
+	*c = ft_toupper(*c);
 }
 
 int	main(void)
@@ -206,6 +218,14 @@ int	main(void)
 		i++;
 	}
 
+	ft_putendl_fd(ft_strmapi("ApfelBaum", &test_toupper), 1);
+	char	iteritest[] = "SalatGurke";
+	ft_striteri(iteritest, &test2_toupper);
+	ft_putendl_fd(iteritest, 1);
+
+	ft_putendl_fd("ft_putnbr", 1);
+	ft_putnbr_fd(-2147483648, 1);
+	ft_putchar_fd('\n', 1);
 
 	ft_putendl_fd("----DONE----", 1);
 
