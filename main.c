@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 14:04:33 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 14:26:10 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,10 +223,16 @@ int	main(void)
 	ft_striteri(iteritest, &test2_toupper);
 	ft_putendl_fd(iteritest, 1);
 
-	ft_putendl_fd("ft_putnbr", 1);
+	ft_putendl_fd("\nft_putnbr", 1);
 	ft_putnbr_fd(-2147483648, 1);
 	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(2147483647, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-10, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(1, 1);
+	ft_putchar_fd('\n', 1);
 
-	ft_putendl_fd("----DONE----", 1);
+	ft_putendl_fd("\n----DONE----", 1);
 
 }
