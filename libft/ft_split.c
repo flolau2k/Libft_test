@@ -6,16 +6,11 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:06:36 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/17 13:57:24 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 11:56:01 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// static char	**ft_split_recursive(char **ret, char const *s, char c)
-// {
-
-// }
 
 static int	ft_strlen_delimiter(char const *s, char c)
 {
@@ -57,11 +52,12 @@ char	**ft_split(char const *s, char c)
 	ret = ft_calloc(num_substr, sizeof(char *));
 	if (ret)
 	{
-		while (i < ft_num_substr(s, c))
+		while (i < num_substr)
 		{
 			curr_substr_len = ft_strlen_delimiter(curr_substr_ptr, c);
 			ret[i] = ft_calloc(curr_substr_len + 1, sizeof(char));
 			ft_memcpy(ret[i], curr_substr_ptr, curr_substr_len);
+			curr_substr_ptr += curr_substr_len + 1;
 			i++;
 		}
 	}

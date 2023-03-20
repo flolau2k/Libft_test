@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 11:25:00 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 12:03:29 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,5 +195,18 @@ int	main(void)
 	TEST_FUNC(ft_strncmp(ft_itoa(0), "0", 12) == 0);
 	// printf("%s\n", ft_itoa(-0));
 	TEST_FUNC(ft_strncmp(ft_itoa(-0), "0", 12) == 0);
+
+	ft_putendl_fd("\nft_split", 1);
+	char	to_split[] = "Apfel,Banane,Kiwi,Obstsalat,,\n";
+	char	**split = ft_split(to_split, ',');
+	size_t i = 0;
+	while (i < 5)
+	{
+		ft_putendl_fd(split[i], 1);
+		i++;
+	}
+
+
+	ft_putendl_fd("----DONE----", 1);
 
 }
