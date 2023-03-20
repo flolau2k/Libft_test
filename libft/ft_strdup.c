@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 09:42:32 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/17 09:46:05 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 11:40:09 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*ft_strdup(const char *s1)
 
 	len = ft_strlen(s1) + 1;
 	ret = ft_calloc(len, sizeof(char));
-	ft_strlcpy(ret, s1, len);
+	if (ret)
+		ft_strlcpy(ret, s1, len);
 	return (ret);
 }

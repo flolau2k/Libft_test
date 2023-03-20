@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:36:37 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/15 11:00:39 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/20 11:46:37 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	ret = malloc((len + 1) * sizeof(char));
-	s += start;
-	while (i < len && s[i])
+	if (ret)
 	{
-		ret[i] = s[i];
-		i++;
+		s += start;
+		while (i < len && s[i])
+		{
+			ret[i] = s[i];
+			i++;
+		}
+		ret[i] = '\0';
 	}
-	ret[i] = '\0';
 	return (ret);
 }
