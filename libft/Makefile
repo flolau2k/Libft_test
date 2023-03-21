@@ -6,7 +6,7 @@
 #    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/03/21 18:08:22 by flauer           ###   ########.fr        #
+#    Updated: 2023/03/21 18:22:55 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,7 @@ OBJ_BONUS =
 all: $(NAME)
 
 $(NAME): $(SRC) $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	ar rcs $(NAME) $(OBJ)
 
 clean:
 	/bin/rm -f $(OBJ)
@@ -46,5 +45,4 @@ fclean: clean
 re:	fclean all
 
 bonus: $(SRC_BONUS) $(OBJ_BONUS) $(NAME)
-	ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
-	ranlib $(NAME)
+	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
