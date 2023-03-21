@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:36:41 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 16:32:41 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 15:14:48 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	if (nlen > len)
 		return (NULL);
-	while (i < (len - nlen) && haystack[i])
+	while (i <= (len - nlen) && haystack[i])
 	{
 		if (ft_memcmp(haystack + i, needle, nlen) == 0)
 			return ((char *)(haystack + i));

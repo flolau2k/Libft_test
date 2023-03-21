@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 11:30:15 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 15:13:59 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,11 @@ int	main(void)
 	char	a2[] = "that";
 	char	a3[50] = "This";
 	char	a4[] = "that";
+	char	a5[100] = "pqrstuvwxyz";
 	printf("return: %zu, string is: %s\n", strlcat(a1, a2, 0), a1);
 	printf("return: %zu, string is: %s\n", ft_strlcat(a3, a4, 0), a3);
+	ft_strlcat(a5, "abcd", 20);
+	TEST_FUNC(ft_strncmp(a5, "pqrstuvwxyzabcd", 20) == 0);
 
 	ft_putstr_fd("\nft_memcmp\n", 1);
 	TEST_FUNC(ft_memcmp("hallo123", "hallo123", 8) == 0);
@@ -192,11 +195,18 @@ int	main(void)
 	char *needle3 = "asdf";
 	TEST_FUNC(ft_strnstr(hay, needle3, 30) == NULL);
 	TEST_FUNC(ft_strnstr("lorem ipsum dolor sit amet", "dolor", 0) == NULL);
+	char *hay2 = "abcdefgh";
+	char *needle4 = "abc";
+	TEST_FUNC(ft_strnstr(hay2, needle4, 3) == hay2);
+	char *hay3 = "aaxx";
+	char *needle5 = "xx";
+	TEST_FUNC(ft_strnstr(hay3, needle5, 4) == hay3 + 2);
 
 	ft_putstr_fd("\nft_atoi\n", 1);
 	TEST_FUNC(ft_atoi(" 1234") == 1234);
 	TEST_FUNC(ft_atoi("  -----32") == 0);
 	TEST_FUNC(ft_atoi("  ++--4") == 0);
+	TEST_FUNC(ft_atoi("-+123") == 0);
 	TEST_FUNC(ft_atoi(" \t\n\r\v\f  469 \n") == 469);
 
 	ft_putendl_fd("\nft_calloc", 1);
@@ -218,11 +228,14 @@ int	main(void)
 	TEST_FUNC(ft_strncmp(test2, "Das ist das Haus vom NikolausHaus", 34) == 0);
 	
 	ft_putendl_fd("\nft_strtrim", 1);
-	char	trimtest[] = "123Hallo3212";
-	ft_putendl_fd(trimtest, 1);
-	check = ft_strtrim(trimtest, "123");
-	TEST_FUNC(ft_strncmp("Hallo", check, 12) == 0);
-	ft_putendl_fd(check, 1);
+	// char	trimtest[] = "123Hallo3212";
+	// ft_putendl_fd(trimtest, 1);
+	// check = ft_strtrim(trimtest, "123");
+	TEST_FUNC(ft_strncmp("Hallo", ft_strtrim("123Hallo3212", "123"), 12) == 0);
+	TEST_FUNC(ft_strncmp("Hallo", ft_strtrim("123Hallo", "123"), 12) == 0);
+	TEST_FUNC(ft_strncmp("Hallo", ft_strtrim("Hallo", "123"), 12) == 0);
+	TEST_FUNC(ft_strncmp("Hallo", ft_strtrim("Hallo123", "123"), 12) == 0);
+	//ft_putendl_fd(check, 1);
 
 	ft_putendl_fd("\nft_itoa", 1);
 	// printf("%s\n", ft_itoa(2147483647));

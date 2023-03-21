@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:06:36 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 11:43:42 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 14:48:10 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static size_t	ft_num_substr(char const *s, char c)
 	}
 	while (s[i])
 	{
-		if (s[i] == c && s[i+1] && s[i+1] != c)
+		if (s[i] == c && s[i +1] && s[i +1] != c)
 			num_substr++;
 		i++;
 	}
@@ -58,24 +58,24 @@ char	**ft_split(char const *s, char c)
 	char	**ret;
 	size_t	i;
 	size_t	num_substr;
-	char	*curr_substr;
-	size_t	curr_substr_len;
+	char	*curr_start;
+	size_t	curr_len;
 
 	i = -1;
 	num_substr = ft_num_substr(s, c);
-	curr_substr = (char *) ft_find_next_substr(s, c);
+	curr_start = (char *) ft_find_next_substr(s, c);
 	ret = ft_calloc(num_substr + 1, sizeof(char *));
 	if (!ret)
 		return (ret);
 	while (++i < num_substr)
 	{
-		curr_substr_len = ft_strlen_delimiter(curr_substr, c);
-		if (curr_substr_len == 0)
+		curr_len = ft_strlen_delimiter(curr_start, c);
+		if (curr_len == 0)
 			continue ;
-		ret[i] = ft_substr(curr_substr, 0, curr_substr_len);
+		ret[i] = ft_substr(curr_start, 0, curr_len);
 		if (!ret[i])
 			return (NULL);
-		curr_substr = (char *) ft_find_next_substr(curr_substr + curr_substr_len, c);
+		curr_start = (char *) ft_find_next_substr(curr_start + curr_len, c);
 	}
 	return (ret);
 }
