@@ -1,4 +1,4 @@
-all: re
+all: test
 
 clean:
 	(cd libft && make fclean)

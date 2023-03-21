@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include "libft/libft.h"
 
-size_t	ft_num_substr(char const *s, char c);
+int	ft_isspace(const char c);
 
-int main(void)
+int main(int argc, char *argv[])
 {
-	char test[] = ",,,,,,,,,";
-
-	printf("%zu", ft_num_substr(test, ','));
+	if (argc == 1)
+		return 0;
+	int i = 1;
+	while (i < argc)
+	{
+		printf("%i\n", ft_atoi(argv[i]));
+		i++;
+	}
 	return (0);
 }

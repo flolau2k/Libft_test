@@ -6,19 +6,15 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:53:40 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 16:53:38 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 16:04:23 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(const char c)
+int	ft_isspace(const char c)
 {
-	char	str[2];
-
-	str[0] = c;
-	str[1] = '\0';
-	if (ft_strnstr("\t\n\v\f\r ", str, 7))
+	if (c == 32 || (c >= 9 && c <= 13))
 		return (1);
 	return (0);
 }
@@ -32,7 +28,7 @@ int	ft_atoi(const char *str)
 	ret = 0;
 	i = 0;
 	sign = 1;
-	while (ft_isspace(str[i]))
+	while (str[i] && ft_isspace(str[i]))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
