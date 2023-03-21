@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 15:45:02 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 17:08:13 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,6 +201,7 @@ int	main(void)
 	char *hay3 = "aaxx";
 	char *needle5 = "xx";
 	TEST_FUNC(ft_strnstr(hay3, needle5, 4) == hay3 + 2);
+	//TEST_FUNC(ft_strnstr(NULL, "fake", 3) == 0); this is supposed to SEGFAULT
 
 	ft_putstr_fd("\nft_atoi\n", 1);
 	TEST_FUNC(ft_atoi(" 1234") == 1234);

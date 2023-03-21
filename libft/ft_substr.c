@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:36:37 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 18:06:28 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 17:19:15 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	strlen = ft_strlen(s);
-	if (strlen < start)
+	if (strlen < start) // return an empty string, if trying to get a substring out of range
 		return (ft_calloc(1, sizeof(char)));
-	if (strlen - start < len)
+	if (strlen - start < len) // only copy what is there...
 		len = strlen - start;
 	ret = malloc((len + 1) * sizeof(char));
 	if (ret)

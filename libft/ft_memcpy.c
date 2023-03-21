@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 12:09:13 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 08:38:47 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 16:36:30 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char		*s1;
 	const char	*s2;
 
-	if (dst == NULL || src == NULL)
+	if (dst == NULL && src == NULL)
 		return (dst);
 	i = 0;
 	s1 = dst;

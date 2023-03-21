@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:03:37 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 08:38:10 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 16:36:40 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char			*c_dst;
 	const char		*c_src;
 
-	if (dst == NULL || src == NULL)
+	if (dst == NULL && src == NULL)
 		return (dst);
 	c_dst = dst;
 	c_src = src;
