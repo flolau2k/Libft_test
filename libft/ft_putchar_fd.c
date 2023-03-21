@@ -6,16 +6,16 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:48:24 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/14 15:10:37 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 08:48:58 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 
+	// if (fd < 0 || fd > 2)
+	// 	return ;
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0 || fd > 2)
-		return ;
 	write(fd, &c, 1);
 	return ;
 }

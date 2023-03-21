@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 18:10:52 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 11:30:15 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 
 #define TEST_FUNC(CONDITION)	if(CONDITION) \
 									ft_putstr_fd("passed\n", 1); \
-								else \
-									ft_putstr_fd("\033[1;31mfailed\033[0m\n", 1);
+								else {\
+									ft_putstr_fd("\033[1;31mfailed\033[0m\npress enter to continue...\n", 1); \
+									getchar();}
 
 void	ft_putstrn_fd(char *s, int fd, size_t len)
 {
@@ -96,7 +97,7 @@ int	main(void)
 	TEST_FUNC(ft_strncmp(ft_substr("hallo12345", 1, 9), "allo12345", 9) == 0);
 	TEST_FUNC(ft_strncmp(ft_substr("hallo12345", 0, 5), "hallo", 5) == 0);
 	//TEST_FUNC(strncmp(ft_substr("01234", 10, 5), "", 1) == 0);
-	char *str = "01234";
+	char str[] = "01234";
 	size_t size = 10;
 	char *ret = ft_substr(str, 10, size);
 
@@ -151,6 +152,7 @@ int	main(void)
 	ft_memset(buf, '&', 10);
 	ft_memcpy(buf2, buf, 10);
 	TEST_FUNC(ft_memcmp(buf, buf2, 10) == 0);
+	TEST_FUNC(ft_memcpy(((void *)0), ((void *)0), 3) == NULL);
 	free(buf);
 	free(buf2);
 
@@ -166,6 +168,11 @@ int	main(void)
 	ft_putendl_fd(s1, 1);
 	ft_memmove(s2, s1, 20);
 	ft_putendl_fd(s1, 1);
+	TEST_FUNC(ft_memmove(((void *)0), ((void *)0), 5) == NULL);
+	char str2[] = "memmove can be very useful......";
+  	ft_memmove(str2+20,str2+15,11);
+	ft_putendl_fd(str2, 1);
+	TEST_FUNC(ft_strncmp(str2, "memmove can be very very useful.", 33) == 0);
 
 	ft_putstr_fd("\nft_strchr\n", 1);
 	TEST_FUNC(ft_strchr(buf, 's') == buf + 3);
@@ -228,31 +235,40 @@ int	main(void)
 	TEST_FUNC(ft_strncmp(ft_itoa(-0), "0", 12) == 0);
 
 	ft_putendl_fd("\nft_split", 1);
-	char	to_split[] = "Apfel,Banane,Kiwi,Obstsalat,,\n";
-	char	*scheck[6];
+	char	to_split[] = ",,Apfel,Banane,Kiwi,Obstsalat,";
+	char	*scheck[4];
 	scheck[0] = "Apfel";
 	scheck[1] = "Banane";
 	scheck[2] = "Kiwi";
 	scheck[3] = "Obstsalat";
-	scheck[4] = "";
-	scheck[5] = "\n";
 	char	**split = ft_split(to_split, ',');
 	size_t i = 0;
-	while (i < 6)
+	while (split[i])
 	{
 		//ft_putendl_fd(split[i], 1);
 		TEST_FUNC(ft_strncmp(split[i], scheck[i], 10) == 0);
 		i++;
 	}
 
-	char	**split2 = ft_split(" ", ',');
+	char	**split2 = ft_split("   ", ',');
 	i = 0;
-	while (i < 1)
+	while (split2[i])
 	{
 		//ft_putendl_fd(split[i], 1);
-		TEST_FUNC(ft_strncmp(split2[i], " ", 10) == 0);
+		TEST_FUNC(ft_strncmp(split2[i], "   ", 10) == 0);
 		i++;
 	}
+
+	split2 = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
+
+	
+
+	//char	**split3 = ft_split(NULL, '.');
+	// char	*split4[3];
+	// split4[0] = "Apfel";
+	// split4[1] = NULL;
+	// split4[2] = "Baum";
+	//char	**split4 = ft_split();
 
 	ft_putendl_fd("\nft_strmapi", 1);
 	ft_putendl_fd(ft_strmapi("ApfelBaum", &test_toupper), 1);

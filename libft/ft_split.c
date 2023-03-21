@@ -6,15 +6,15 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:06:36 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 15:35:10 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/21 11:43:42 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strlen_delimiter(char const *s, char c)
+static size_t	ft_strlen_delimiter(char const *s, char c)
 {
-	int	ret;
+	size_t	ret;
 
 	ret = 0;
 	while (s[ret] && s[ret] != c)
@@ -22,44 +22,60 @@ static int	ft_strlen_delimiter(char const *s, char c)
 	return (ret);
 }
 
-static int	ft_num_substr(char const *s, char c)
+static size_t	ft_num_substr(char const *s, char c)
 {
-	int		num_substr;
-	int		i;
+	size_t	num_substr;
+	size_t	i;
 
 	i = 0;
 	num_substr = 0;
+	if (s[i] && s[i] != c)
+	{
+		num_substr++;
+		i++;
+	}
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == c && s[i+1] && s[i+1] != c)
 			num_substr++;
 		i++;
 	}
-	return (num_substr + 1);
+	return (num_substr);
+}
+
+static const char	*ft_find_next_substr(const char *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && s[i] == c)
+		i++;
+	return (&s[i]);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**ret;
-	int		i;
-	int		num_substr;
-	char	*curr_substr_ptr;
-	int		curr_substr_len;
+	size_t	i;
+	size_t	num_substr;
+	char	*curr_substr;
+	size_t	curr_substr_len;
 
-	i = 0;
+	i = -1;
 	num_substr = ft_num_substr(s, c);
-	curr_substr_ptr = (char *) s;
-	ret = ft_calloc(num_substr, sizeof(char *));
-	if (ret)
+	curr_substr = (char *) ft_find_next_substr(s, c);
+	ret = ft_calloc(num_substr + 1, sizeof(char *));
+	if (!ret)
+		return (ret);
+	while (++i < num_substr)
 	{
-		while (i < num_substr)
-		{
-			curr_substr_len = ft_strlen_delimiter(curr_substr_ptr, c);
-			ret[i] = ft_calloc(curr_substr_len + 1, sizeof(char));
-			ft_memcpy(ret[i], curr_substr_ptr, curr_substr_len);
-			curr_substr_ptr += curr_substr_len + 1;
-			i++;
-		}
+		curr_substr_len = ft_strlen_delimiter(curr_substr, c);
+		if (curr_substr_len == 0)
+			continue ;
+		ret[i] = ft_substr(curr_substr, 0, curr_substr_len);
+		if (!ret[i])
+			return (NULL);
+		curr_substr = (char *) ft_find_next_substr(curr_substr + curr_substr_len, c);
 	}
 	return (ret);
 }
