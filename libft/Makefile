@@ -6,7 +6,7 @@
 #    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/03/21 18:22:55 by flauer           ###   ########.fr        #
+#    Updated: 2023/03/21 19:20:45 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,11 @@ SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 
 OBJ = $(SRC:%.c=%.o)
 
-SRC_BONUS = 
+SRC_BONUS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+			ft_lstmap.c
 
-OBJ_BONUS = 
+OBJ_BONUS = $(SRC_BONUS:%.c=%.o)
 
 .PHONY: all clean fclean re bonus
 
