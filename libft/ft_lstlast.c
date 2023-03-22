@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:38:35 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 18:41:18 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/22 17:11:26 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*curr_elm;
 
 	i = 0;
+	if (!lst)
+		return (lst);
 	curr_elm = lst;
 	while (curr_elm->next)
 	{
