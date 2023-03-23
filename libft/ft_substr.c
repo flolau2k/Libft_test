@@ -6,34 +6,30 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:36:37 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 17:19:15 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/23 11:02:07 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 
+/// @brief	allocates and returns a substring of a given string s,
+///			starting at index start and of length len.
+/// @param s original string
+/// @param start start index for substring
+/// @param len length of substring
+/// @return	a pointer to the substring. Empty substr if start is out of range
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*ret;
-	unsigned int	i;
-	size_t			strlen;
+	char	*ret;
+	size_t	strlen;
 
-	i = 0;
 	strlen = ft_strlen(s);
-	if (strlen < start) // return an empty string, if trying to get a substring out of range
+	if (strlen < start)
 		return (ft_calloc(1, sizeof(char)));
-	if (strlen - start < len) // only copy what is there...
+	if (strlen - start < len)
 		len = strlen - start;
 	ret = malloc((len + 1) * sizeof(char));
 	if (ret)
-	{
-		s += start;
-		while (i < len && s[i])
-		{
-			ret[i] = s[i];
-			i++;
-		}
-		ret[i] = '\0';
-	}
+		ft_strlcpy(ret, s + start, len + 1);
 	return (ret);
 }

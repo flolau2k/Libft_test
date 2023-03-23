@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:26:05 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 18:29:16 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/23 15:05:54 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
-	lst = &new;
+	*lst = new;
 }

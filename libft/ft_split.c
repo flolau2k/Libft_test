@@ -6,11 +6,12 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:06:36 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/22 17:48:20 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/23 15:08:46 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static size_t	ft_strlen_delimiter(char const *s, char c)
 {
@@ -53,7 +54,20 @@ static const char	*ft_find_next_substr(const char *s, char c)
 	return (&s[i]);
 }
 
-// TODO: free if fail in nth substring!
+void	ft_free_str_arr(char **strarr)
+{
+	int	i;
+
+	i = 0;
+	while(strarr[i])
+	{
+		free(strarr[i]);
+		i++;
+	}
+	free(strarr);
+	strarr = NULL;
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**ret;
@@ -71,11 +85,12 @@ char	**ft_split(char const *s, char c)
 	while (++i < num_substr)
 	{
 		curr_len = ft_strlen_delimiter(curr_start, c);
-		if (curr_len == 0)
-			continue ;
 		ret[i] = ft_substr(curr_start, 0, curr_len);
 		if (!ret[i])
-			return (NULL);
+		{
+			ft_free_str_arr(ret);
+			return (ret);
+		}
 		curr_start = (char *) ft_find_next_substr(curr_start + curr_len, c);
 	}
 	return (ret);

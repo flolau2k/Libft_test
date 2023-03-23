@@ -6,7 +6,7 @@
 #    By: flauer <flauer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 11:29:08 by flauer            #+#    #+#              #
-#    Updated: 2023/03/21 19:20:45 by flauer           ###   ########.fr        #
+#    Updated: 2023/03/23 15:04:55 by flauer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,12 +39,12 @@ $(NAME): $(SRC) $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 clean:
-	/bin/rm -f $(OBJ)
+	/bin/rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	/bin/rm -f $(NAME)
 
 re:	fclean all
 
-bonus: $(SRC_BONUS) $(OBJ_BONUS) $(NAME)
+bonus: $(NAME) $(SRC_BONUS) $(OBJ_BONUS)
 	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)

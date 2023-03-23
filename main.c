@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 17:08:13 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/23 13:52:12 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -275,7 +275,8 @@ int	main(void)
 	}
 
 	split2 = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
-
+	split2 = ft_split("123456789012345678901234567890", 1);
+	split2 = ft_split("hello!", ' ');
 	
 
 	//char	**split3 = ft_split(NULL, '.');
