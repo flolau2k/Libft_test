@@ -12,7 +12,8 @@
 
 #include "libft/libft.h"
 #include <stdio.h>
-#include <string.h>
+//#include <string.h>
+#include <bsd/string.h>
 
 #define TEST_FUNC(CONDITION)	if(CONDITION) \
 									ft_putstr_fd("passed\n", 1); \

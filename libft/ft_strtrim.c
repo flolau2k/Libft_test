@@ -31,7 +31,7 @@ static size_t	ft_wordlen(const char *s, const char *set)
 	size_t	i;
 
 	i = ft_strlen(s);
-	while(i > 0 && ft_isset(set, s[i - 1]))
+	while (i > 0 && ft_isset(set, s[i - 1]))
 		i--;
 	return (i);
 }
@@ -42,7 +42,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ret;
 
 	i = 0;
-	while(s1[i] && ft_isset(set, s1[i]))
+	while (s1[i] && ft_isset(set, s1[i]))
 		i++;
 	ret = ft_substr(s1, i, ft_wordlen(s1 + i, set));
 	return (ret);

@@ -59,7 +59,7 @@ void	ft_free_str_arr(char **strarr)
 	int	i;
 
 	i = 0;
-	while(strarr[i])
+	while (strarr[i])
 	{
 		free(strarr[i]);
 		i++;
@@ -81,7 +81,7 @@ char	**ft_split(char const *s, char c)
 	curr_start = (char *) ft_find_next_substr(s, c);
 	ret = ft_calloc(num_substr + 1, sizeof(char *));
 	if (!ret)
-		return (ret);
+		return (NULL);
 	while (++i < num_substr)
 	{
 		curr_len = ft_strlen_delimiter(curr_start, c);
@@ -89,7 +89,7 @@ char	**ft_split(char const *s, char c)
 		if (!ret[i])
 		{
 			ft_free_str_arr(ret);
-			return (ret);
+			return (NULL);
 		}
 		curr_start = (char *) ft_find_next_substr(curr_start + curr_len, c);
 	}
