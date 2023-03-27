@@ -6,12 +6,17 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:01:59 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/23 15:27:20 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 11:47:33 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief apply f to the contents of the nodes and create a new list from it
+/// @param lst input list
+/// @param f function applied to the contents of every node
+/// @param del function to delete node in case of error
+/// @return a pointer to the new list
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*ret;

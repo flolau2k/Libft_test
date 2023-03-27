@@ -6,12 +6,19 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 09:27:38 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 16:13:28 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 12:34:32 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief lexicographically compares the NUL-terminated strings s1 and s2.
+/// not more than n characters are compared.
+/// @param s1 first string
+/// @param s2 second string
+/// @param n number of characters to compare
+/// @return returns 0 if both strings are equal, otherwise returns the
+/// the difference between the first two different characters.
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	len1;

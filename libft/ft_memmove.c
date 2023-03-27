@@ -6,12 +6,18 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:03:37 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 16:36:40 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 11:56:19 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief copy n bytes from src to dst. The buffers may overlap, the copy is
+/// done in a non-destructive way.
+/// @param dst pointer to destination buffer
+/// @param src pointer to source buffer
+/// @param len number of bytes to copy
+/// @return the original value of dst
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned int	i;

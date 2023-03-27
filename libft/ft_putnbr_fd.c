@@ -6,12 +6,15 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:34:58 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 14:05:55 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 11:59:36 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief output a number as string (base 10) to a file descriptor
+/// @param n integer number to output
+/// @param fd file descriptor
 void	ft_putnbr_fd(int n, int fd)
 {
 	char			out[10];

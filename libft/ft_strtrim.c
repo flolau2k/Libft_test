@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 11:29:54 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 12:19:28 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 12:42:31 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ static size_t	ft_wordlen(const char *s, const char *set)
 	return (i);
 }
 
+/// @brief create a copy of s1, with all characters in set removed from
+/// the beginning and the end.
+/// @param s1 input string
+/// @param set set of characters to be removed
+/// @return new trimmed string
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
@@ -47,28 +52,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ret = ft_substr(s1, i, ft_wordlen(s1 + i, set));
 	return (ret);
 }
-
-// char	*ft_strtrim(char const *s1, char const *set)
-// {
-// 	char	*ret;
-// 	int		ilastchar;
-// 	int		setlen;
-// 	int		i;
-
-// 	ret = (char *) s1;
-// 	i = 0;
-// 	setlen = ft_strlen(set);
-// 	ilastchar = ft_strlen(ret) - 1;
-// 	while (i < setlen)
-// 	{
-// 		if (ret[ilastchar] == set[i])
-// 		{
-// 			ret[ilastchar] = 0;
-// 			return (ft_strtrim(ret, set));
-// 		}
-// 		if (ret[0] == set[i])
-// 			return (ft_strtrim(ret + 1, set));
-// 		i++;
-// 	}
-// 	return (ret);
-// }

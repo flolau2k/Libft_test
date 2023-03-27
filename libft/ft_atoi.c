@@ -6,19 +6,22 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:53:40 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/21 16:04:23 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 11:26:26 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(const char c)
+static int	ft_isspace(const char c)
 {
 	if (c == 32 || (c >= 9 && c <= 13))
 		return (1);
 	return (0);
 }
 
+/// @brief convert a string to an integer
+/// @param str input string with decimal number
+/// @return number as integer
 int	ft_atoi(const char *str)
 {
 	int	ret;

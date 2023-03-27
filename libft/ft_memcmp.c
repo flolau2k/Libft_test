@@ -6,12 +6,18 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:40:02 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 16:12:48 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 11:52:28 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief compare two buffers in memory bytewise
+/// @param s1 pointer to first buffer
+/// @param s2 pointer to second buffer
+/// @param n number of bytes to compare
+/// @return returns 0 if both buffers are equal, otherwise returns difference
+/// between the first two different bytes.
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned int		i;

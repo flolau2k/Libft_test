@@ -6,12 +6,15 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 09:42:32 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 11:40:09 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 12:01:01 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief creates a duplicate of the input string
+/// @param s1 input string
+/// @return pointer to the new string with the same contents
 char	*ft_strdup(const char *s1)
 {
 	char	*ret;

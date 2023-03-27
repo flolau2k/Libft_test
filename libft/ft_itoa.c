@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 14:34:29 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/20 11:19:26 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 11:41:28 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ static int	ft_abs(int n)
 	return (n);
 }
 
+/// @brief create a string representation of a given integer input (base 10)
+/// @param n input integer
+/// @return pointer to the newly created string
 char	*ft_itoa(int n)
 {
 	char	*ret;

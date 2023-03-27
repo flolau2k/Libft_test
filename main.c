@@ -6,7 +6,7 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/27 09:43:39 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 12:21:00 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,8 @@ int	main(void)
 	TEST_FUNC(ft_memcpy(((void *)0), ((void *)0), 3) == NULL);
 	free(buf);
 	free(buf2);
+	char sdfg[50];
+	memcpy(sdfg, NULL, 10);
 
 	ft_putstr_fd("\nft_memmove\n", 1);
 	buf = malloc(32);
