@@ -7,4 +7,4 @@ re:	clean test
 
 test:
 	(cd libft && make && make bonus)
-	gcc -g -Wall -Wextra -Werror main.c -Llibft/ -lft -lbsd -fsanitize=address
+	gcc -g -Wall -Wextra -Werror main.c -Llibft/ -lft -fsanitize=address

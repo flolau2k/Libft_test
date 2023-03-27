@@ -6,14 +6,14 @@
 /*   By: flauer <flauer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:12:50 by flauer            #+#    #+#             */
-/*   Updated: 2023/03/23 13:52:12 by flauer           ###   ########.fr       */
+/*   Updated: 2023/03/27 09:43:39 by flauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <stdio.h>
-//#include <string.h>
-#include <bsd/string.h>
+#include <string.h>
+//#include <bsd/string.h>
 
 #define TEST_FUNC(CONDITION)	if(CONDITION) \
 									ft_putstr_fd("passed\n", 1); \
